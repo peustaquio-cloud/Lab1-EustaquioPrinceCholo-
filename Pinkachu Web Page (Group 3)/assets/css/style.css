@@ -1,0 +1,103 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff0f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffb6c1;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  border-bottom: 3px solid #ff99cc;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header p {
+  margin: 5px 0 0;
+  font-size: 1.2rem;
+}
+
+nav {
+  background-color: #ffcce0;
+  padding: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background-color: #ffe6f0;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+nav a::after {
+  content: " ➜";
+  opacity: 0;
+  transform: translateX(-5px);
+  transition: all 0.3s ease;
+}
+
+nav a:hover {
+  background-color: #ff99cc;
+  color: white;
+}
+
+nav a:hover::after {
+  opacity: 1;
+  transform: translateX(5px); 
+}
+
+section {
+  background-color: #fffafc;
+  padding: 15px;
+  border-radius: 12px;
+  margin: 15px;
+  text-align: center;
+  border: 2px solid #ffb6c1;
+}
+
+section h2 {
+  color: #cc3366;
+  margin-bottom: 10px;
+}
+
+section img {
+  width: 120px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.cholo { border-color: #ffd700; }   /* Pikachu */
+.ella { border-color: #1e90ff; }    /* Gyarados */
+.joey { border-color: #ffb6c1; }    /* Jigglypuff */
+.justine { border-color: #dda0dd; } /* Sylveon */
+.margaux { border-color: #87ceeb; } /* Piplup */
+.sanjee { border-color: #f08080; }  /* Emolga */
+.marlene { border-color: #ff69b4; } /* Clefable */
+
+footer {
+  background-color: #ffb6c1;
+  text-align: center;
+  padding: 10px;
+  color: white;
+  border-top: 3px solid #ff99cc;
+}
