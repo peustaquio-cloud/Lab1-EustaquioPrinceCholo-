@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Personal Profile</title>
+
+<style>
+body {
+    font-family: 'Comic Sans MS', cursive;
+    margin: 0;
+    background-color: #eaf6ff;
+}
+header {
+    background: #b3e5fc;
+    color: #034f84;
+    text-align: center;
+    padding: 20px;
+}
+nav {
+    background: #81d4fa;
+    padding: 10px;
+    text-align: center;
+}
+nav a {
+    color: #034f84;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    text-decoration: underline;
+}
+section {
+    background: white;
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+img {
+    display: block;
+    margin: auto;
+    width: 180px;
+    border-radius: 50%;
+    border: 5px solid #b3e5fc;
+    cursor: pointer;
+}
+h2 {
+    text-align: center;
+    color: #0288d1;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+table, th, td {
+    border: 1px solid #b3e5fc;
+}
+th {
+    background: #b3e5fc;
+    color: #034f84;
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #b3e5fc;
+}
+button {
+    background: #81d4fa;
+    color: #034f84;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #4fc3f7;
+}
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #b3e5fc;
+    color: #034f84;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>☁️ My Personal Profile ☁️</h1>
+</header>
+
+<nav>
+<a href="#about">About</a>
+<a href="#image">Image</a>
+<a href="#skills">Skills</a>
+<a href="#table">Table</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<section id="about">
+<h2>About Me</h2>
+<img src="C:\Users\RENZ\OneDrive\Desktop\Mini Project 2\img\me.jfif" alt="Profile">
+<p>Hello! I am Prince Cholo Eustaquio, you can just call me Cholo! I love to listen to Laufey and Sabrina Carpenter whenever I draw. My favorite sanrio character is Cinnamoroll.
+ My current favorite show right now is "Go for it, Nakamura!" I am currently a student at Pateros Technological College, taking up Bachelor of Science in Information Technology. 
+I am a very shy person but I am also very friendly once you get to know me!💙</p>
+</section>
+
+<section id="image">
+<h2>Clickable Image</h2>
+<a href="https://www.sanrio.com/collections/cinnamoroll?srsltid=AfmBOoohXYoDYELdoTXcMOMwVTqmBV_CqSfTP5xy8mUfGpc-9gi9x117" target="_blank">
+<img src="C:\Users\RENZ\OneDrive\Desktop\Mini Project 2\img\baby.jfif" alt="Cinnamoroll">
+</a>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<table>
+<tr><th>Skill</th><th>Level</th></tr>
+<tr><td>HTML</td><td>Beginner</td></tr>
+<tr><td>CSS</td><td>Beginner</td></tr>
+<tr><td>Emotional Intelligence</td><td>High</td></tr>
+</table>
+</section>
+
+<section id="table">
+<h2>Styled Table</h2>
+<table>
+<tr><th>Name</th><th>Age</th><th>Course</th></tr>
+<tr><td>Owi</td><td>18</td><td>BSIT</td></tr>
+<tr><td>Lay</td><td>19</td><td>BSIT</td></tr>
+<tr><td>Chols</td><td>20</td><td>BSIT</td></tr>
+</table>
+</section>
+
+<section id="contact">
+<h2>Contact Form</h2>
+<form>
+<input type="text" placeholder="Name" required>
+<input type="email" placeholder="Email" required>
+<textarea placeholder="Message" required></textarea>
+<button type="submit">Send 💌</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026☁️</p>
+</footer>
+
+</body>
+</html>
