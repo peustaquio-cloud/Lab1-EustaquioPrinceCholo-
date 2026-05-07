@@ -1,0 +1,96 @@
+body{
+    font-family: Arial, sans-serif;
+    background: #1b1b1b;
+    color: white;
+    margin: 0;
+    padding: 20px;
+}
+
+.container{
+    width: 500px;
+    margin: 30px auto;
+    background: #2b1d33;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px #d291ff;
+}
+
+h2{
+    text-align: center;
+    color: #ffb3ff;
+}
+
+h3{
+    color: #ffd6ff;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #ffd6ff;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+textarea,
+select{
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 2px solid #d291ff;
+    background: #f7e6ff;
+    color: black;
+    box-sizing: border-box;
+}
+
+textarea{
+    resize: none;
+    height: 100px;
+}
+
+input[type="radio"],
+input[type="checkbox"]{
+    margin-top: 10px;
+}
+
+input[type="submit"],
+input[type="reset"]{
+    background: #d291ff;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+    background: #ffb3ff;
+}
+
+.result{
+    margin-top: 20px;
+    background: #3c2547;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.error{
+    color: #ff8080;
+    font-weight: bold;
+}
+
+.success{
+    color: #90ff90;
+    font-weight: bold;
+}
+
+hr{
+    margin: 40px 0;
+    border: 1px solid #d291ff;
+}
