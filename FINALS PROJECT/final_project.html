@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project of BSIT-1X</title>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=s
+wap" rel="stylesheet">
+
+    <style>
+        /* ===== BODY ===== */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            color: white;
+
+            /* BACKGROUND IMAGE */
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)),
+                url('https://scontent.fmnl8-5.fna.fbcdn.net/v/t1.15752-9/696441223_1640960990458233_4416531941077821184_n.jpg?stp=dst-jpg_s2048x2048_tt6&_nc_cat=109&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeEZU4eW4Osf3qhYPXDwnolVR1f_zdEVcBZHV__N0RVwFhXck9B7wjbEOMUnFDSHJsJeCN8ks9k3GCMjk-3iDN7N&_nc_ohc=tAd0r3P89WkQ7kNvwHh4gQC&_nc_oc=AdoUkIW6VlxMe8EewBSadQBn59tg-hhloUrxoSgHhCInrXtaadah4ZAwxkcIEBawA4k&_nc_zt=23&_nc_ht=scontent.fmnl8-5.fna&_nc_ss=7b2a8&oh=03_Q7cD5QGbjJfRXqlyD4-hf6ODlAGalQukY0da7Q23PAx2dty5jA&oe=6A3B2886');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            animation: moveBg 18s ease-in-out infinite alternate;
+        }
+
+        /* ===== BACKGROUND ANIMATION ===== */
+        @keyframes moveBg {
+            0% {
+                background-position: left center;
+                transform: scale(1);
+            }
+
+            50% {
+                background-position: center center;
+            }
+
+            100% {
+                background-position: right center;
+                transform: scale(1.05);
+            }
+        }
+
+        /* ===== HEADER ===== */
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        }
+
+        header h1 {
+            font-size: 45px;
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        header h2 {
+            font-size: 22px;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        header p {
+            color: #f1f1f1;
+            font-size: 15px;
+        }
+
+        /* ===== SEARCH BAR ===== */
+        .search-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+
+        .search-box input {
+            width: 380px;
+            padding: 15px 20px;
+            border: none;
+            outline: none;
+            border-radius: 40px;
+            font-size: 16px;
+            color: white;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .search-box input::placeholder {
+            color: #ddd;
+        }
+
+        .search-box button {
+            width: 60px;
+            border: none;
+            border-radius: 50%;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 18px;
+            color: white;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(12px);
+            transition: 0.3s;
+        }
+
+        .search-box button:hover {
+            transform: scale(1.08);
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* ===== GROUP CARD ===== */
+        .group {
+            width: 90%;
+            max-width: 950px;
+            margin: auto;
+            margin-bottom: 30px;
+            padding: 30px;
+            border-radius: 25px;
+            color: white;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+            transition: 0.4s ease;
+        }
+
+        .group:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ===== GROUP TITLE ===== */
+        .group h3 {
+            font-size: 30px;
+            margin-bottom: 20px;
+            color: white;
+            cursor: pointer;
+        }
+
+        /* ===== NAMES ===== */
+        .names {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .names a {
+            display: block;
+            margin: 10px 0;
+            text-decoration: none;
+            color: #f5f5f5;
+            font-size: 18px;
+            padding: 10px;
+            border-radius: 10px;
+            transition: 0.3s;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .names a:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateX(5px);
+        }
+
+        /* ===== ACTIVITIES ===== */
+        .activities {
+            display: none;
+            margin-left: 20px;
+            margin-top: 10px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .activities a {
+            display: block;
+            margin: 6px 0;
+            color: #ddd;
+            font-size: 15px;
+            text-decoration: none;
+            padding: 6px;
+            border-radius: 8px;
+        }
+
+        .activities a:hover {
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        /* ===== HIGHLIGHT ===== */
+        .highlight {
+            background: rgba(255, 224, 130, 0.25) !important;
+            border-left: 4px solid #ffe082;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            color: white;
+        }
+
+        /* ===== ANIMATION ===== */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media(max-width:768px) {
+            header h1 {
+                font-size: 30px;
+            }
+
+            header h2 {
+                font-size: 18px;
+            }
+
+            .search-box input {
+                width: 230px;
+            }
+
+            .group {
+                padding: 22px;
+            }
+
+            .group h3 {
+                font-size: 24px;
+            }
+
+            .names a {
+                font-size: 16px;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>FINAL PROJECT OF BSIT-1X</h1>
+        <h2>WS 101 - Bachelor of Science in Information Technology </h2>
+        <p>Our class website with our each team web and application of all laboratory exercises. </p>
+    </header>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" id="search" placeholder="Search names...">
+        <button onclick="searchName()">
+            🔍
+        </button>
+    </div>
+    <div class="group">
+        <h3 onclick="toggleGroup('group1')">Group 1</h3>
+        <div id="group1" class="names">
+            <a href="https://github.com/Dennis-beepboop" onclick="toggleActivities('dennis'); return 
+false;">Dennis P. Ofilan</a>
+            <div id="dennis" class="activities">
+                <a href="https://github.com/Dennis-beepboop/simple-index.html-style.css/tree/main/MyWebpage">
+                    FINALS Activity #1</a>
+                <a href="https://github.com/Dennis-beepboop/FINAL-ACTIVITY-2">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/Dennis-beepboop/FINAL-ACTIVITY-3">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/Dennis-beepboop/Final-Activity-4">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/justinemontil123-hub" onclick="toggleActivities('justine'); 
+return false;">Justine C. Montil</a>
+            <div id="justine" class="activities">
+                <a href="https://github.com/justinemontil123-hub/Simple-index.html-and-style.css.git">FINALS
+                    Activity #1</a>
+
+                <a href="https://github.com/justinemontil123-hub/Lab-activity-2.git">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/justinemontil123-hub/Lab-activity-3.git">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/justinemontil123-hub/My-php-project.git">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/rpmadrona-source" onclick="toggleActivities('ronel'); return 
+false;">Ronel P. Madrona</a>
+            <div id="ronel" class="activities">
+                <a href="https://github.com/rpmadrona-source/Mini-Project.git">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/rpmadrona-source/FINAL-ACTIVITY-2.git">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/rpmadrona-source/FINAL-ACTIVITY-3.git">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/rpmadrona-source/FINAL-ACTIVITY-4.git">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/erjhonlibre-dev" onclick="toggleActivities('erjhon'); return 
+false;">Erjhon S. Libre</a>
+            <div id="erjhon" class="activities">
+                <a href="https://github.com/erjhonlibre-dev/Mini-Project.git">FINALS Activity #1</a>
+                <a href="https://github.com/erjhonlibre-dev/Final-Activity-2.git">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/erjhonlibre-dev/Final-Activity-3.git">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/erjhonlibre-dev/Final-Activity-4-.git">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/hilaponjude4-bit" onclick="toggleActivities('jude'); return 
+false;">Jude Hilapon</a>
+            <div id="jude" class="activities">
+                <a href="https://github.com/hilaponjude4-bit/Act-1-mini-project">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/hilaponjude4-bit/Lab_finals-act-2">FINALS Activity #2</a>
+                <a href="https://github.com/hilaponjude4-bit/PHP_LAB-FORM">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/hilaponjude4-bit/Php-if-switch_LAB">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/ntlagumbay-ui" onclick="toggleActivities('neil'); return 
+false;">Neil T. Lagumbay</a>
+
+            <div id="neil" class="activities">
+                <a href="https://github.com/ntlagumbay-ui/Simple-index.html-and-style.css.git">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/ntlagumbay-ui/Lab-activity-2.git">FINALS Activity #2</a>
+                <a href="https://github.com/ntlagumbay-ui/index.php.git">FINALS Activity #3</a>
+                <a href="https://github.com/ntlagumbay-ui/Final-activity-4.git">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/jmrizano-langgithub.com"
+                onclick="toggleActivities('jmrizano'); return false;">Jude M. Rizano</a>
+            <div id="jmrizano" class="activities">
+                <a href="https://github.com/jmrizano-lang/Mini-project.git">FINALS Activity #1</a>
+                <a href="https://github.com/jmrizano-lang/Lab-Activity-2.git">FINALS Activity #2</a>
+                <a href="https://github.com/jmrizano-lang/Lab-Activity-3.git">FINALS Activity #3</a>
+                <a href="https://github.com/jmrizano-lang/Final-Activity-4.git">FINALS Activity #4</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <h3 onclick="toggleGroup('group2')">Group 2</h3>
+        <div id="group2" class="names">
+            <a href="https://github.com/ppala-stack" onclick="toggleActivities('pauline'); return 
+false;">Pauline P. Ala</a>
+            <div id="pauline" class="activities">
+                <a href="https://github.com/ppala-stack/FinalAct_Ala-Pauline-P.git">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/ppala-stack/FinalsActivity2-Ala-Pauline-P.git">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/ppala-stack/ala-final-act-3.git">FINALS Activity #3</a>
+                <a href="https://github.com/ppala-stack/final-act-4.git">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/jmmallado-spec" onclick="toggleActivities('john matthew'); 
+return false;">John Matthew M. Allado</a>
+            <div id="john matthew" class="activities">
+                <a href="https://github.com/jmmallado-spec/Matthew-allado-final-activity-/tree/main">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/jmmallado-spec/John-Matthew-m.-Allado-/blob/main/Final%20activity-2
+">FINALS Activity #2</a>
+                <a href="https://github.com/jmmallado-spec/John-Matthew-m.Allado/tree/main">FINALS Activity
+                    #3</a>
+
+                <a href="https://github.com/jmmallado-spec/Matthew-allado/tree/main">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/jlmacasinag-tech" onclick="toggleActivities('jamaica'); return 
+false;">Jamaica L. Macasinag</a>
+            <div id="jamaica" class="activities">
+                <a href="https://github.com/jlmacasinag-tech/Lab4_Macasinagjamaica.git">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/jlmacasinag-tech/Macasinag_finals_act2.git">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/jlmacasinag-tech/Macasinag_php.git">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/jlmacasinag-tech/MacasinagJamaica_Finals_Act4.git">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/lemacaraeg-creator" onclick="toggleActivities('laila'); return 
+false;">Laila E. Macaraeg</a>
+            <div id="laila" class="activities">
+                <a href="https://github.com/lemacaraeg-creator/activityfinal.git">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/lemacaraeg-creator/activityfinal.git">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/lemacaraeg-creator/Lab-Activity-3.git">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/lemacaraeg-creator/activity4.git">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/edllacer-tech" onclick="toggleActivities('earlyn'); return 
+false;">Earlyn D. Llacer</a>
+            <div id="earlyn" class="activities">
+                <a href="https://github.com/edllacer-tech/Final-Exercise-1-Mini-Project">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/edllacer-tech/Final-activiy-2">FINALS Activity #2</a>
+                <a href="https://github.com/edllacer-tech/Finals-Activity-3">FINALS Activity #3</a>
+                <a href="https://github.com/edllacer-tech/Final-activiy-4">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/pdquiros-cmyk" onclick="toggleActivities('princess brllianne'); 
+return false;">Princess Brllianne D. Quiros</a>
+            <div id="princess brllianne" class="activities">
+                <a href="https://github.com/pdquiros-cmyk/FinalAct_Quiros-Princess-Brllianne-D.git">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/pdquiros-cmyk/pdquiros-cmyk-FinalsActivity2_Quiros-Princess-Brlliann
+e-D">FINALS Activity #2</a>
+                <a href="https://github.com/pdquiros-cmyk/Final-Activity-3-Quiros-Princess-Brllianne-D..git">FINAL
+                    S Activity #3</a>
+                <a href="https://github.com/pdquiros-cmyk/Finals-Activity-4-Quiros-Princess-Brllianne-D..git">FINA
+                    LS Activity #4</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <h3 onclick="toggleGroup('group3')">Group 3</h3>
+        <div id="group3" class="names">
+            <a href="#" id="joeyName" onclick="confirmProfile(); toggleActivities('joey'); return 
+false;">
+                Joey Ann A. Ramos
+            </a>
+            <div id="joey" class="activities">
+                <a href="https://github.com/jaramos-glitch/Finals_Act1.git?authuser=0">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/jaramos-glitch/PHP_Activity.git?authuser=0">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/jaramos-glitch/php-forms-lab-exercises.git?authuser=0">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/jaramos-glitch/finals_activity-4.git?authuser=0">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/Pacheco021" id="ellaName" onclick="toggleActivities('ella'); 
+return false; ">Ella Joy J. Pacheco</a>
+            <div id="ella" class="activities">
+                <a href="https://github.com/Pacheco021/LAB1-PACHECOELLAJOY.gitVITY 
+1">FINALS Activity #1</a>
+                <a href="https://github.com/Pacheco021/Finals_Activity_2-PACHECOELLAJOY.git">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/Pacheco021/FINAL_ACTIVITY_3.git">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/Pacheco021/FINAL_ACTIVIY_4.git">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/peustaquio-cloud?fbclid=IwY2xjawR_0SNleHRuA2FlbQIxMABicmlkET
+FYNjdSSm5IZjZZRmFjQ3lkc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHpQzq-lkY
+8z9dmz3iHrhOQzU9RqztPh5hGaBrzqimRhm1IKp3bYoE--FZTp4_aem_And66xfEMIRg62lY1Xh
+H9w" id=choloName onclick="toggleActivities('cholo'); return false; ">Prince Cholo C. Eustaquio</a>
+            <div id="cholo" class="activities">
+                <a href="https://github.com/peustaquio-cloud/Lab1-EustaquioPrinceCholo-/tree/a622d35aa1ce203
+1646a5bc7042132124ff9fb70/Mini%20Project%202">FINALS Activity #1</a>
+                <a href="https://github.com/peustaquio-cloud/Lab1-EustaquioPrinceCholo-/tree/99ca1e40f97e8bd8
+278ac8226ae5b17526bd6ff0/Finals%20Activity%20%232%20(PHP)">FINALS Activity #2</a>
+                <a href="https://github.com/peustaquio-cloud/Lab1-EustaquioPrinceCholo-/tree/21fcf2eb1b9c6ce36
+d09381b74306958b2502084/WS_Lab_Activity%233">FINALS Activity #3</a>
+                <a href="https://github.com/peustaquio-cloud/Lab1-EustaquioPrinceCholo-/tree/2c95b2370e26b9c
+aaa5333b816c71506bc39c2e1/Finals%20Act%234">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/msroyo06/Margahtml/commits?author=msroyo06" id="margauxName"
+                onclick="toggleActivities('margaux'); return false; ">Margaux S. Royo</a>
+            <div id="margaux" class="activities">
+                <a href="https://github.com/msroyo06/Margahtml/tree/main">FINALS Activity #1</a>
+                <a href="https://github.com/msroyo06/Final-Activity-2">FINALS Activity #2</a>
+                <a href="https://github.com/msroyo06/Final-Activity-3">FINALS Activity #3</a>
+                <a href="https://github.com/msroyo06/Final-Act-4-/issues">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/marlenecastillano14344-collab" id="marleneName"
+                onclick="toggleActivities('marlene'); return false; ">Marlene G. Castillano</a>
+            <div id="marlene" class="activities">
+                <a href="https://github.com/marlenecastillano14344-collab/Final-Activity-1">FINALS
+                    Activity #1</a>
+                <a href="https://github.com/marlenecastillano14344-collab/Final-Activity-2">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/marlenecastillano14344-collab/Final-Activity-3">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/marlenecastillano14344-collab/Finals-Activity-4">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/dacallueng-pixel" id="sanjeeName"
+                onclick="toggleActivities('sanjee'); return false; ">Dave Sanjee A. Callueng</a>
+            <div id="sanjee" class="activities">
+                <a href="https://github.com/dacallueng-pixel/FINALS-ACTIVITY-3/edit/main/README.md">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/dacallueng-pixel/FINALS-ACTIVITY-4">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="" id="justineName" onclick="toggleActivities('justin'); return false; ">Justine
+                Jade U. Butuan</a>
+            <div id="justine" class="activities">
+                <a href="*">FINALS Activity #1</a>
+                <a href="*">FINALS Activity #2</a>
+                <a href="*">FINALS Activity #3</a>
+                <a href="*">FINALS Activity #4</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="group">
+        <h3 onclick="toggleGroup('group4')">Group 4</h3>
+        <div id="group4" class="names">
+            <a href="https://github.com/Medina-tech932" id="benedicName"
+                onclick="toggleActivities('benedic'); return false; ">Benedic S. Medina</a>
+            <div id="benedic" class="activities">
+                <a href="https://github.com/Medina-tech932/Finalactivity.html ">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/Medina-tech932/Finalactivity2 ">FINALS Activity #2</a>
+                <a href="https://github.com/Medina-tech932/FinalAct3/tree/main ">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/Medina-tech932/FinalAct-4/tree/main ">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/kurtjara377-design " id="kurtName"
+                onclick="toggleActivities('kurt'); return false; ">Kurt Raymund H. Jara</a>
+            <div id="kurt" class="activities">
+                <a href="https://github.com/kurtjara377-design/alibatory/tree/main/Myprend-main/Webpage 
+">FINALS Activity #1</a>
+                <a href="https://github.com/kurtjara377-design/Act-2 ">FINALS Activity #2</a>
+                <a href="https://github.com/kurtjara377-design/FINAL-ACT-3/tree/main ">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/kurtjara377-design/FINAL-ACT-4/tree/main ">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/jmsanchez-rizzgods " id="michaelName"
+                onclick="toggleActivities('michael'); return false; ">Jhon Michael S. Sanchez</a>
+            <div id="michael" class="activities">
+                <a href="https://github.com/jmsanchez-rizzgods/finalactivity.html ">FINALS Activity
+                    #1</a>
+                <a href="https://github.com/jmsanchez-rizzgods/PHP-Activity-Syntax-Output-Variables-Operators 
+">FINALS Activity #2</a>
+                <a href="https://github.com/jmsanchez-rizzgods/Final-Activity-3 ">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/jmsanchez-rizzgods/Finals-Activity-4/blob/main/index.php 
+">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/ManaladTech " id="russelName"
+                onclick="toggleActivities('russel'); return false; ">Russel Ely S. Manalad</a>
+            <div id="russel" class="activities">
+                <a href="https://github.com/ManaladTech/ACTIVITYFINAL ">FINALS Activity #1</a>
+                <a href="https://github.com/ManaladTech/finalactivity ">FINALS Activity #2</a>
+                <a href="https://github.com/ManaladTech/Finaal-Act3/blob/main/lab1.php ">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/ManaladTech/activity4/tree/f3360078b095ab06d37659d91aac6db5802
+6057b ">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/BSITrain " id="rainierName"
+                onclick="toggleActivities('rainier'); return false; ">Rainier D. Agarin</a>
+            <div id="rainier" class="activities">
+                <a href="https://github.com/BSITrain/finalactivity ">FINALS Activity #1</a>
+                <a href="https://github.com/BSITrain/FinalAct2 ">FINALS Activity #2</a>
+                <a href="https://github.com/BSITrain/FinalAct-3 ">FINALS Activity #3</a>
+                <a href="https://github.com/BSITrain/finalact4 ">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/rrlupaz-blip " id="raulName" onclick="toggleActivities('raul'); 
+return false; ">Raul R. Lupaz Jr.</a>
+            <div id="raul" class="activities">
+                <a href="https://github.com/Raul-Jr-Ichijo/finalactivity ">FINALS Activity #1</a>
+                <a href="https://github.com/rrlupaz-blip/finalactivityraul ">FINALS Activity #2</a>
+                <a href="https://github.com/rrlupaz-blip/finalact3 ">FINALS Activity #3</a>
+                <a href="https://github.com/rrlupaz-blip/activity4 ">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/Clarence2313 " id="clarenceName"
+                onclick="toggleActivities('clarence'); return false; ">Clarence P. Bretana</a>
+            <div id="clarence" class="activities">
+                <a href="https://github.com/Clarence2313/FinalAct1_Compiled ">FINALS Activity
+
+                    #1</a>
+                <a href="https://github.com/Clarence2313/FinalAct2_Compiled ">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/Clarence2313/FinalAct3_Compiled ">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/rrlupaz-blip/finalact4 ">FINALS Activity #4</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <h3 onclick="toggleGroup('group5')">Group 5</h3>
+        <div id="group5" class="names">
+            <a href="Profile link: https://github.com/padequito-jpg" onclick="toggleActivities('paul'); 
+return false;">Paul Christian A. Dequito</a>
+            <div id="paul" class="activities">
+                <a href="https://github.com/padequito-jpg/Lab2_Group5.git">FINALS Activity #1</a>
+                <a href="https://github.com/padequito-jpg/Activities_final1to8.git">FINALS Activity
+                    #2</a>
+                <a href="https://github.com/padequito-jpg/FINAL_ACTIVITY_3_WS.git">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/padequito-jpg/Final_ACT_4_WS.git">FINALS Activity
+                    #4</a>
+            </div>
+      <a href="#" onclick="toggleActivities('anna'); return false;">Anna Margarita H. Garrido</a>
+<div id="anna" class="activities">
+    <a href="https://github.com/maggiecodes25/miniproj/tree/main/EX1MP">FINALS Activity #1</a>
+    <a href="https://github.com/maggiecodes25/combineverything/tree/main/EX2CE">FINALS Activity #2</a>
+    <a href="https://github.com/maggiecodes25/f.act2">FINALS Activity #2</a>
+    <a href="https://github.com/maggiecodes25/f.act3">FINALS Activity #3</a>
+    <a href="https://github.com/maggiecodes25/f.act4">FINALS Activity #4</a>
+</div>
+
+<a href="#" onclick="toggleActivities('marieden'); return false;">Marieden N. Dutong</a>
+<div id="marieden" class="activities">
+    <a href="https://github.com/mndutong-spec/Finals-Activity-1.git">FINALS Activity #1</a>
+    <a href="https://github.com/mndutong-spec/Final-Activity-2-PHP.git">FINALS Activity #2</a>
+    <a href="https://github.com/mndutong-spec/FinalActivity-3.git">FINALS Activity #3</a>
+    <a href="https://github.com/mndutong-spec/FinalsActivity-4.git">FINALS Activity #4</a>
+</div>
+
+            <a href="https://github.com/Ysabelleaaa " onclick="toggleActivities('ysabelle'); return 
+false;">Jessa Mae N. Gadot</a>
+            <div id="ysabelle" class="activities">
+                <a href="https://github.com/Ysabelleaaa/Final-Activity">FINALS Activity #1</a>
+                <a href="https://github.com/Ysabelleaaa/-Final-Activity-2-">FINALS Activity #2</a>
+                <a href="https://github.com/Ysabelleaaa/FINAL-ACTIVITY-3">FINALS Activity #3</a>
+                <a href="https://github.com/Ysabelleaaa/final_act-4/tree/main">FINALS Activity
+                    #4</a>
+            </div>
+        </div>
+    </div>
+    <div class="group">
+        <h3 onclick="toggleGroup('group6')">Group 6</h3>
+        <div id="group6" class="names">
+            <a href="https://github.com/crlupaz-code " id="charlName "
+                onclick="toggleActivities('Charl'); return false; ">Charl Lupaz</a>
+            <div id="Charl" class="activities">
+                <a href="https://github.com/crlupaz-code/mini-project ">FINALS Activity #1</a>
+                <a href="https://github.com/crlupaz-code/FinalsActivity2 ">FINALS Activity #2</a>
+                <a href="https://github.com/crlupaz-code/FinalsActivity3 ">FINALS Activity #3</a>
+                <a href="https://github.com/crlupaz-code/FinalsActivity4 ">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/vlpecenio-star " id="vezzyName "
+                onclick="toggleActivities('Vezzy'); return false; ">Vezzy Pecenio</a>
+            <div id="Vezzy" class="activities">
+                <a href="https://github.com/vlpecenio-star/Activity-1/blob/main/Activity%201 
+">FINALS Activity #1</a>
+                <a href="https://github.com/vlpecenio-star/Activity-1/blob/main/Activity%202 
+">FINALS Activity #2</a>
+                <a href="https://github.com/vlpecenio-star/Activity-1/blob/main/Activity%203 
+">FINALS Activity #3</a>
+                <a href="https://github.com/vlpecenio-star/Activity-1/blob/main/Activity%204 
+">FINALS Activity #4</a>
+            </div>
+            <a href="https://github.com/cbelnar-art " id="brentName "
+                onclick="toggleActivities('Brent'); return false; ">Brent Elnar</a>
+            <div id="Brent" class="activities">
+                <a href="https://github.com/cbelnar-art/FINAL-ACTIVITY-1-/tree/main ">FINALS
+                    Activity #1</a>
+
+                <a href="https://github.com/cbelnar-art/FINAL-ACTIVITY-2/tree/main ">FINALS
+                    Activity #2</a>
+                <a href="https://github.com/cbelnar-art/FINAL-ACTIVITY-3/tree/main ">FINALS
+                    Activity #3</a>
+                <a href="https://github.com/cbelnar-art/FINAL-ACTIVITY-4/upload/main ">FINALS
+                    Activity #4</a>
+            </div>
+            <a href="https://github.com/Carl-reyes-justin " id="carlName "
+                onclick="toggleActivities('Carl'); return false; ">Carl Justin Reyes</a>
+            <div id="Carl" class="activities">
+                <a href="https://github.com/Carl-reyes-justin/FINAL-ACT-1">FINALS Activity #1</a>
+                <a href="https://github.com/Carl-reyes-justin/FINAL-ACT-2">FINALS Activity #2</a>
+                <a href="https://github.com/Carl-reyes-justin/FINAL-ACTIVITY-3">FINALS Activity
+                    #3</a>
+                <a href="https://github.com/Carl-reyes-justin/FINAL-ACTIVITY-4">FINALS Activity
+                    #4</a>
+            </div>
+            <a href="https://github.com/jesstonipalmones4-svg" id="jesstonilName"
+                onclick="toggleActivities('Jesstoni'); return false; ">Jesstoni M. Palmones</a>
+            <div id="Jesstoni" class="activities">
+                <a href="https://github.com/jesstonipalmones4-svg/Activity-exercise.git">FINALS
+                    Activity #3</a>
+            </div>
+            <a href="https://github.com/Ernest" id="erName" onclick="toggleActivities('Ernest'); 
+return false; ">John Ernest M. Allado</a>
+            <div id="Ernest" class="activities">
+                <a href="*">FINALS Activity #1</a>
+                <a href="*">FINALS Activity #2</a>
+                <a href="*">FINALS Activity #3</a>
+                <a href="*">FINALS Activity #4</a>
+            </div>
+        </div>
+    </div>
+    <footer>
+        BSIT-1X
+    </footer>
+
+
+    <!-- Script -->
+    <script>
+        document.getElementById('search').addEventListener('input', searchName);
+
+        function toggleGroup(id) {
+            var el = document.getElementById(id);
+            el.style.display = (el.style.display === "block") ? "none" : "block";
+        }
+
+        function toggleActivities(id) {
+            var el = document.getElementById(id);
+            el.style.display = (el.style.display === "block") ? "none" : "block";
+        }
+
+        function confirmProfile() {
+            var confirmView = confirm("Do you want to view Joey Ann Ramos' GitHub profile?");
+            if (confirmView) {
+                window.open("https://github.com/jaramos-glitch", "_blank");
+            }
+        }
+
+        function searchName() {
+            var filter = document.getElementById('search').value.toLowerCase().trim();
+            var groups = document.querySelectorAll('.group');
+
+            groups.forEach(function (group) {
+                var namesContainer = group.querySelector('.names');
+                var names = namesContainer.querySelectorAll(':scope > a');
+                var matchInGroup = false;
+
+                names.forEach(function (name) {
+                    name.classList.remove("highlight");
+
+                    if (filter === "") {
+                        name.style.display = "block";
+                        matchInGroup = true;
+                    }
+                    else if (name.textContent.toLowerCase().includes(filter)) {
+                        name.style.display = "block";
+                        name.classList.add("highlight");
+                        matchInGroup = true;
+                    }
+                    else {
+                        name.style.display = "none";
+                    }
+                });
+
+                if (filter === "") {
+                    group.style.display = "block";
+                    namesContainer.style.display = "none";
+                }
+                else if (matchInGroup) {
+                    group.style.display = "block";
+                    namesContainer.style.display = "block";
+                }
+                else {
+                    group.style.display = "none";
+                }
+            });
+        }
+    </script>
+
+</body>
+
+</html>
